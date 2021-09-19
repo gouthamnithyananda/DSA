@@ -11,6 +11,8 @@ public class CreateBST {
 		node = createbst.insert(node,8);
 		node = createbst.insert(node,15);
     System.out.println(createbst.search(node,14));
+    System.out.println(createbst.findMin(node));
+    System.out.println(createbst.findMax(node));
 	}
 	
 	private int search(BSTNode node , int data) {
@@ -38,6 +40,19 @@ public class CreateBST {
 		BSTNode node = new BSTNode();
 		node.data=data;
 		return node;
+	}
+	
+	private int findMin(BSTNode node) {
+		if(node==null) return -1;
+		
+		if(node.left==null)return node.data;
+		return findMin(node.left);
+	}
+	private int findMax(BSTNode node) {
+		if(node==null) return -1;
+		
+		if(node.right==null)return node.data;
+		return findMax(node.right);
 	}
 
 }
