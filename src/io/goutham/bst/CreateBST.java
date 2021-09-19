@@ -1,5 +1,8 @@
 package io.goutham.bst;
 
+import java.util.LinkedList;
+import java.util.Queue;
+
 public class CreateBST {
 
 	public static void main(String[] args) {
@@ -10,9 +13,12 @@ public class CreateBST {
 		node = createbst.insert(node,9);
 		node = createbst.insert(node,8);
 		node = createbst.insert(node,15);
+		node = createbst.insert(node,7);
     System.out.println(createbst.search(node,14));
     System.out.println(createbst.findMin(node));
     System.out.println(createbst.findMax(node));
+    System.out.println(createbst.findHeight(node));
+    createbst.levelOrderTraversal(node);
 	}
 	
 	private int search(BSTNode node , int data) {
@@ -53,6 +59,29 @@ public class CreateBST {
 		
 		if(node.right==null)return node.data;
 		return findMax(node.right);
+	}
+	
+	private int findHeight(BSTNode node) {
+		if(node==null)return -1;
+		int leftHeight = findHeight(node.left);
+		int rightHeight = findHeight(node.right);
+		return Math.max(leftHeight, rightHeight)+1;
+	}
+	
+	private void levelOrderTraversal(BSTNode node){
+		if(node==null)return;
+		BSTNode currentNode = node;
+		Queue<BSTNode> tmpQ = new LinkedList<BSTNode>();
+		tmpQ.add(node);
+		while(!tmpQ.isEmpty()) {
+			currentNode=tmpQ.peek();
+			System.out.print(currentNode.data + " ");
+			if(currentNode.left!=null)tmpQ.add(currentNode.left);
+			if(currentNode.right!=null)tmpQ.add(currentNode.right);
+			tmpQ.remove();
+		}
+		
+		
 	}
 
 }
