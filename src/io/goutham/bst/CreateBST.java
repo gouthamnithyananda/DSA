@@ -25,6 +25,7 @@ public class CreateBST {
     createbst.inOrderTraversal(node);
     System.out.println("");
     createbst.postOrderTraversal(node);
+    System.out.println(createbst.isBST(node));
 	}
 	
 	
@@ -110,6 +111,22 @@ public class CreateBST {
 		inOrderTraversal(node.right);
 		System.out.print(node.data + " ");
 		
+	}
+	
+	private Boolean isBST(BSTNode node) {
+		return isBSTUtil(node,Integer.MIN_VALUE,Integer.MAX_VALUE);
+	}
+
+
+	private Boolean isBSTUtil(BSTNode node, int minValue, int maxValue) {
+		if(node==null)return true;
+		
+		if(node.data>minValue && node.data<maxValue &&
+				isBSTUtil(node.left,minValue,node.data)&&
+				isBSTUtil(node.right,node.data,maxValue))
+			return true;
+		else
+		return false;
 	}
 
 }
