@@ -19,7 +19,14 @@ public class CreateBST {
     System.out.println(createbst.findMax(node));
     System.out.println(createbst.findHeight(node));
     createbst.levelOrderTraversal(node);
+    System.out.println("");
+    createbst.preOrderTraversal(node);
+    System.out.println("");
+    createbst.inOrderTraversal(node);
+    System.out.println("");
+    createbst.postOrderTraversal(node);
 	}
+	
 	
 	private int search(BSTNode node , int data) {
 		int result=0;
@@ -80,7 +87,28 @@ public class CreateBST {
 			if(currentNode.right!=null)tmpQ.add(currentNode.right);
 			tmpQ.remove();
 		}
-		
+	}
+	
+	private void preOrderTraversal(BSTNode node) {
+		if(node==null)return;
+		System.out.print(node.data + " ");
+		preOrderTraversal(node.left);
+		preOrderTraversal(node.right);
+	}
+	private void inOrderTraversal(BSTNode node) {
+		if(node==null)return;
+	
+		inOrderTraversal(node.left);
+		System.out.print(node.data + " ");
+		inOrderTraversal(node.right);
+	}
+	
+	private void postOrderTraversal(BSTNode node) {
+		if(node==null)return;
+	
+		inOrderTraversal(node.left);
+		inOrderTraversal(node.right);
+		System.out.print(node.data + " ");
 		
 	}
 
