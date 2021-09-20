@@ -23,6 +23,9 @@ public class Test {
 //		 List<List<Integer>>  resultThreesum = new Test().threeSum(new int[] {-1,0,1,2,-1,-4});
 //		 System.out.println(resultThreesum);
 		
+	
+		
+		
 		
 		
 //		in = new Scanner(System.in);
