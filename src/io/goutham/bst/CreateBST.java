@@ -11,9 +11,11 @@ public class CreateBST {
 		node = createbst.insert(node,10);
 		node = createbst.insert(node,12);
 		node = createbst.insert(node,9);
-		node = createbst.insert(node,8);
+		node = createbst.insert(node,6);
 		node = createbst.insert(node,15);
+		node = createbst.insert(node,2);
 		node = createbst.insert(node,7);
+		node = createbst.insert(node,11);
     System.out.println(createbst.search(node,14));
     System.out.println(createbst.findMin(node));
     System.out.println(createbst.findMax(node));
@@ -26,6 +28,10 @@ public class CreateBST {
     System.out.println("");
     createbst.postOrderTraversal(node);
     System.out.println(createbst.isBST(node));
+    
+    System.out.println("Calling delete!!");
+    createbst.delete(node, 12);
+    createbst.inOrderTraversal(node);
 	}
 	
 	
@@ -127,6 +133,30 @@ public class CreateBST {
 			return true;
 		else
 		return false;
+	}
+	
+	
+	private BSTNode delete(BSTNode node, int val) {
+		if(node==null) return node;
+		if(node.data>val) {node.left = delete(node.left,val);}
+		else if(node.data<val) {node.right = delete(node.right,val);}
+		else {
+			if(node.right==null && node.left==null) {
+				node =null;
+			}else if(node.left==null) {
+				node=node.right;
+			}else if(node.right==null) {
+				node=node.left;
+			}else {
+				int minNodeVal = findMin(node.right);
+				node.data=minNodeVal;
+				node.right=delete(node.right,minNodeVal);
+			}
+		}
+		
+		
+		
+		return node;
 	}
 
 }
