@@ -19,7 +19,7 @@ public class CreateBST {
     System.out.println(createbst.search(node,14));
     System.out.println(createbst.findMin(node));
     System.out.println(createbst.findMax(node));
-    System.out.println(createbst.findHeight(node));
+    System.out.println("height:"+createbst.findHeight(node));
     createbst.levelOrderTraversal(node);
     System.out.println("");
     createbst.preOrderTraversal(node);
