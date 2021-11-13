@@ -11,14 +11,35 @@ public class BinarySearch {
 		 System.out.println("Eneter key to search");
 		 int searchKey = s.nextInt();
 		 
-		 Boolean result =BinarySearchUtil(arr,0,arr.length-1,searchKey);
+		 Boolean result =BinarySearchUtilrecursion(arr,0,arr.length-1,searchKey);
 		 System.out.println( result);
+		  result =BinarySearchUtil(arr,0,arr.length-1,searchKey);
+		 System.out.println( result);
+		 
+		 
 		  
 		      
 		
 	}
 
-	private static Boolean  BinarySearchUtil(int[] arr, int start, int end, int searchKey) {
+	private static Boolean BinarySearchUtil(int[] arr, int start, int end, int searchKey) {
+         int mid;
+		
+		if(start<=end) {
+			mid = (start+end)/2;
+			if(arr[mid]==searchKey) {
+				return true;
+			}else if(searchKey<arr[mid]) {
+				return BinarySearchUtil(arr,start,mid-1,searchKey);
+			}else {
+				return BinarySearchUtil(arr,mid+1,end,searchKey);
+			}
+		}
+		
+		return false;
+	}
+
+	private static Boolean  BinarySearchUtilrecursion(int[] arr, int start, int end, int searchKey) {
 		
 		int mid;
 		
