@@ -32,6 +32,11 @@ public class CreateBST {
     System.out.println("Calling delete!!");
     createbst.delete(node, 12);
     createbst.inOrderTraversal(node);
+    
+    
+    System.out.println("Calling inorder succesor!!");
+    int successor = createbst.inOrderSuccessor(node, 111);
+    System.out.println(successor);
 	}
 	
 	
@@ -155,6 +160,42 @@ public class CreateBST {
 		}
 		
 		
+		
+		return node;
+	}
+	
+	private int inOrderSuccessor(BSTNode node, int val) {
+		if(node==null)return -1;
+		
+		BSTNode current = find(node,val);
+		if(current.right!=null) {
+			return findMin(current.right);
+		}else {
+			BSTNode ancestor = node;
+			BSTNode successor = null;
+			while(current!=ancestor) {
+				if(current.data<ancestor.data) {
+					successor = ancestor;
+					ancestor=ancestor.left;
+				}else {
+					ancestor=ancestor.right;
+				}
+			}
+			if(successor!=null)return successor.data;
+			return -1;
+		}
+	}
+
+
+	private BSTNode find(BSTNode node, int val) {
+		if(node==null) return node;
+		if(node.data>val) {
+			node= find(node.left,val);
+		}else if(node.data<val) {
+			node=find(node.right,val);
+		}else {
+			return node;
+		}
 		
 		return node;
 	}
