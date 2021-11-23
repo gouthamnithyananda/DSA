@@ -15,7 +15,7 @@ public class SubStringChk {
 		int s1Len = s1.length();
 		int s2Len = s2.length();
 		
-		for (int i=0;i<=s2Len-s1Len;i++) {
+		for (int i=0;i<=Math.abs(s2Len-s1Len);i++) {
 			System.out.println(s2.charAt(i));
 			for (int j=0;j<s1Len;j++) {
 				if(s2.charAt(i+j)!=s1.charAt(j))break;

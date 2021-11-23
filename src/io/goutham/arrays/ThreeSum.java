@@ -45,7 +45,7 @@ public class ThreeSum {
 							left += 1;
 						while (left < right && (nums[right] == nums[right - 1]))
 							right -= 1;
-						;
+						
 						left += 1;
 						right -= 1;
 					} else if (currentSum > 0) {
