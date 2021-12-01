@@ -16,6 +16,7 @@ public class LRULinkedHasSet {
 
 	
 	private void refer(int page) {
+		
 		if(hs.contains(page)) {
 			hs.remove(page);
 		}else if(hs.size()==CACHE_SIZE) {

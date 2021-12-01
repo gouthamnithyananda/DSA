@@ -5,6 +5,7 @@ import java.util.Scanner;
 
 public class LongestSubstring {
 
+	//longest non repeating set of chars in a string
 	private static Scanner in;
 	public static void main(String[] args) {
 		

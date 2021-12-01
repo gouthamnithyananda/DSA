@@ -7,8 +7,8 @@ public class IsPrimeNum {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		
-		System.out.println(isPrimeNormal(5+1));
-		System.out.println(isPrimeRecursion(5+1));
+		System.out.println(isPrimeNormal(7));
+		//System.out.println(isPrimeRecursion(5+1));
 
 	}
 	
@@ -18,7 +18,7 @@ public class IsPrimeNum {
 		if(n%2==0) return false;
 		
 		for (int i =3;i<=Math.sqrt(n);i+=2) {
-			if(n%3==0) return false;
+			if(n%i==0) return false;
 		}
 		return true;
 	}

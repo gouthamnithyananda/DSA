@@ -6,7 +6,7 @@ public class FirstSmallestElementBinarySearch {
 		// TODO Auto-generated method stub
 
 		 int[] arr = {16, 19, 20, 23, 45, 56, 78, 90, 96, 100};  
-		 System.out.println(BinarySearchUtil(arr,0,arr.length-1,44));
+		 System.out.println(arr[BinarySearchUtil(arr,0,arr.length-1,44)]);
 	}
 	
 	private static int BinarySearchUtil(int[] arr, int start, int end, int searchKey) {

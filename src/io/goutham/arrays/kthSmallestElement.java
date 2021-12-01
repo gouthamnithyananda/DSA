@@ -15,7 +15,7 @@ public class kthSmallestElement {
 	private int kthSmallestElementIs(int[] array,int k) {
 		
 		Arrays.sort(array);
-		Set arraySet = new HashSet<Integer>();
+		Set<Integer> arraySet = new HashSet<Integer>();
 		
 		for(int i:array)arraySet.add(i);
 		

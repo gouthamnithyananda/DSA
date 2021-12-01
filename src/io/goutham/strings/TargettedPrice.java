@@ -6,7 +6,7 @@ import java.util.List;
 public class TargettedPrice {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+		// car target price
 		
 		System.out.println(calculateHrs(100,50,4,20,10,75000));
 

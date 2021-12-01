@@ -7,7 +7,7 @@ public class MaskNumbersInArray {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		
+		//mask every 2nd alternative element in an array until element in array is one
 		System.out.println(mask(new int[] {1,2,3,4,5,6,7}, 2));
 
 	}
