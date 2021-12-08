@@ -9,6 +9,7 @@ public class MergeStringChars {
 		String str2 = "orange";
 		StringBuilder result = new StringBuilder();
 		
+
 	
 		for (int i=0;i<str1.length()||i<str2.length();i++) {
 			if(i<str1.length()) {
